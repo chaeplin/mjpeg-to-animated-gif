@@ -16,13 +16,13 @@ timespace = 10
 try:
 	result = client.get('curno')
 	if result :
-  		curno = int(result)
-  		for i in range((curno - timespace), curno):
+		curno = int(result)
+		for i in range((curno - timespace), curno):
 			data = client.get(str(i))
 			if data:
-    			im = Image.open(StringIO.StringIO(data))
+				im = Image.open(StringIO.StringIO(data))
 				imresized = ImageOps.fit(im, size, Image.ANTIALIAS)
-    			images.append(imresized)
+				images.append(imresized)
 
 		filename = "my_gif.GIF"
 		images2gif.writeGif(filename, images, duration=0.2)
