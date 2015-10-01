@@ -10,6 +10,7 @@ HAVE_SLACK=True
 try:
     from slacker import Slacker
     import sys
+    import os
     import StringIO
     import images2gif
     import datetime    
